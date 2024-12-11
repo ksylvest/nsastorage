@@ -4,6 +4,8 @@ module NSAStorage
   # The price (id + dimensions + rate) for a facility.
   class Price
     ID_REGEX = %r{(?<id>\d+)/rent/}
+    PRICE_SELECTOR = '[data-unit-size="small"],[data-unit-size="medium"],[data-unit-size="large"]'
+
     # @attribute [rw] id
     #   @return [String]
     attr_accessor :id
@@ -26,7 +28,7 @@ module NSAStorage
     def self.fetch(facility_id:)
       url = "https://www.nsastorage.com/facility-units/#{facility_id}"
       html = Crawler.json(url:)['data']['html']['units']
-      Nokogiri::HTML(html).css('[data-unit-size]').map { |element| parse(element:) }
+      Nokogiri::HTML(html).css(PRICE_SELECTOR).map { |element| parse(element:) }
     end
 
     # @param id [String]
