@@ -63,12 +63,13 @@ module NSAStorage
     # @return [Price]
     def self.parse(element:)
       link = element.at_xpath(".//a[contains(text(), 'Rent')]|//a[contains(text(), 'Reserve')]")
-      new(
-        id: ID_REGEX.match(link['href'])[:id],
-        dimensions: Dimensions.parse(element:),
-        features: Features.parse(element:),
-        rates: Rates.parse(element:)
-      )
+      dimensions = Dimensions.parse(element:)
+      features = Features.parse(element:)
+      rates = Rates.parse(element:)
+
+      id = link ? ID_REGEX.match(link['href'])[:id] : "#{dimensions.id}-#{features.id}"
+
+      new(id:, dimensions:, features:, rates:)
     end
   end
 end
