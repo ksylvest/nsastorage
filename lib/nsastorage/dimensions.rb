@@ -38,6 +38,11 @@ module NSAStorage
       "#<#{self.class.name} #{props.join(' ')}>"
     end
 
+    # @return [String] e.g. "5×5"
+    def id
+      "#{format('%g', @width)}×#{format('%g', @depth)}"
+    end
+
     # @return [Integer]
     def sqft
       Integer(@width * @depth)

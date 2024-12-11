@@ -36,6 +36,15 @@ module NSAStorage
       "#<#{self.class.name} #{props.join(' ')}>"
     end
 
+    # @return [String] e.g. ""
+    def id
+      [].tap do |ids|
+        ids << 'cc' if climate_controlled?
+        ids << 'dua' if drive_up_access?
+        ids << 'ffa' if first_floor_access?
+      end.join('-')
+    end
+
     # @return [String] e.g. "Climate Controlled + First Floor Access"
     def text
       amenities.join(' + ')
