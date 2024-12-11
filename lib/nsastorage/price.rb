@@ -62,7 +62,7 @@ module NSAStorage
     #
     # @return [Price]
     def self.parse(element:)
-      link = element.at_xpath("//a[contains(text(), 'Rent')]|//a[contains(text(), 'Reserve')]")
+      link = element.at_xpath(".//a[contains(text(), 'Rent')]|//a[contains(text(), 'Reserve')]")
       new(
         id: ID_REGEX.match(link['href'])[:id],
         dimensions: Dimensions.parse(element:),
