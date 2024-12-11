@@ -19,7 +19,7 @@ module NSAStorage
         Link.new(loc:, lastmod:)
       end
 
-      new(links: links.filter { |link| link.loc.match(%r{/storage/}) })
+      new(links: links.filter { |link| link.loc.match(%r{/storage/.*/\d+}) })
     end
 
     # @param url [String]
