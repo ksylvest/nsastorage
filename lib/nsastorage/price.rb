@@ -3,7 +3,7 @@
 module NSAStorage
   # The price (id + dimensions + rate) for a facility.
   class Price
-    ID_REGEX = %r{(?<id>\d+)/rent/}
+    ID_REGEX = %r{(?<id>\d+)/(?:rent|reserve)/}
     PRICE_SELECTOR = '[data-unit-size="small"],[data-unit-size="medium"],[data-unit-size="large"]'
 
     # @attribute [rw] id
