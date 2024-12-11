@@ -10,7 +10,7 @@ module NSAStorage
       text = element.text
 
       new(
-        climate_controlled: text.include?('Climate controlled'),
+        climate_controlled: text.include?('Heated and Cooled'),
         drive_up_access: text.include?('Drive Up Access'),
         first_floor_access: text.include?('1st Floor')
       )
