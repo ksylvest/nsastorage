@@ -3,6 +3,8 @@
 module NSAStorage
   # The dimensions (width + depth + sqft) of a price.
   class Dimensions
+    DEFAULT_WIDTH = 5.0 # feet
+    DEFAULT_DEPTH = 5.0 # feet
     DEFAULT_HEIGHT = 8.0 # feet
 
     DIMENSIONS_REGEX = /(?<width>[\d\.]+) x (?<depth>[\d\.]+)/
@@ -65,8 +67,8 @@ module NSAStorage
       text = element.at_css('.unit-select-item-detail').text
       match = DIMENSIONS_REGEX.match(text)
 
-      width = Float(match[:width])
-      depth = Float(match[:depth])
+      width = match ? Float(match[:width]) : DEFAULT_WIDTH
+      depth = match ? Float(match[:depth]) : DEFAULT_DEPTH
       new(depth:, width:, height: DEFAULT_HEIGHT)
     end
   end
