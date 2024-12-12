@@ -27,7 +27,10 @@ module NSAStorage
     # @return [Array<Price>]
     def self.fetch(facility_id:)
       url = "https://www.nsastorage.com/facility-units/#{facility_id}"
-      html = Crawler.json(url:)['data']['html']['units']
+      data = Crawler.json(url:)['data']
+      return [] if data['error']
+
+      html = data['html']['units']
       Nokogiri::HTML(html).css(PRICE_SELECTOR).map { |element| parse(element:) }
     end
 
