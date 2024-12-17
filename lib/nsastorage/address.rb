@@ -3,7 +3,7 @@
 module NSAStorage
   # The address (street + city + state + zip) of a facility.
   class Address
-    ADDRESS_SELECTOR = '.item-des-box .text-box i'
+    ADDRESS_SELECTOR = '.item-des-box .text-box .part_title_1'
     ADDRESS_REGEX = /(?<street>.+),\s+(?<city>.+),\s+(?<state>.+)\s+(?<zip>\d{5})/
     # @attribute [rw] street
     #   @return [String]
@@ -55,10 +55,10 @@ module NSAStorage
       element = document.at_css(ADDRESS_SELECTOR)
       match = element.text.match(ADDRESS_REGEX)
       new(
-        street: match[:street],
-        city: match[:city],
-        state: match[:state],
-        zip: match[:zip]
+        street: match[:street].strip,
+        city: match[:city].strip,
+        state: match[:state].strip,
+        zip: match[:zip].strip
       )
     end
   end
