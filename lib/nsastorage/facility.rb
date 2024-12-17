@@ -127,7 +127,7 @@ module NSAStorage
 
     # @return [String]
     def text
-      "#{@id} | #{@name} | #{@phone} | #{@email} | #{@address.text} | #{@geocode.text}"
+      "#{@id} | #{@name} | #{@phone} | #{@email} | #{@address.text} | #{@geocode ? @geocode.text : 'N/A'}"
     end
   end
 end
