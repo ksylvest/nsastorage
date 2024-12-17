@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    nsastorage (1.0.1)
+    nsastorage (1.0.2)
       http
       json
       nokogiri

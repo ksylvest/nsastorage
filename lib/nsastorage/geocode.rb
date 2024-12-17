@@ -18,8 +18,10 @@ module NSAStorage
     #
     # @return [Geocode]
     def self.parse(document:)
-      latitude = LATITUDE_REGEX.match(document.text)[:latitude]
-      longitude = LONGITUDE_REGEX.match(document.text)[:longitude]
+      latitude = LATITUDE_REGEX.match(document.text)&.[](:latitude)
+      longitude = LONGITUDE_REGEX.match(document.text)&.[](:longitude)
+
+      return if latitude.nil? || longitude.nil?
 
       new(latitude: Float(latitude), longitude: Float(longitude))
     end

@@ -37,7 +37,7 @@ module NSAStorage
     attr_accessor :address
 
     # @attribute [rw] geocode
-    #   @return [Geocode]
+    #   @return [Geocode, nil]
     attr_accessor :geocode
 
     # @attribute [rw] prices
