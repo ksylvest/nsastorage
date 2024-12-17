@@ -55,10 +55,10 @@ module NSAStorage
       element = document.at_css(ADDRESS_SELECTOR)
       match = element.text.match(ADDRESS_REGEX)
       new(
-        street: match[:street],
-        city: match[:city],
-        state: match[:state],
-        zip: match[:zip]
+        street: match[:street].strip,
+        city: match[:city].strip,
+        state: match[:state].strip,
+        zip: match[:zip].strip
       )
     end
   end
