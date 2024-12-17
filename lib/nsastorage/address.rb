@@ -3,7 +3,7 @@
 module NSAStorage
   # The address (street + city + state + zip) of a facility.
   class Address
-    ADDRESS_SELECTOR = '.item-des-box .text-box i'
+    ADDRESS_SELECTOR = '.item-des-box .text-box .part_title_1'
     ADDRESS_REGEX = /(?<street>.+),\s+(?<city>.+),\s+(?<state>.+)\s+(?<zip>\d{5})/
     # @attribute [rw] street
     #   @return [String]
