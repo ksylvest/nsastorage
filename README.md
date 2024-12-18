@@ -6,6 +6,8 @@
 [![Yard](https://img.shields.io/badge/docs-site-blue.svg)](https://nsastorage.ksylvest.com)
 [![CircleCI](https://img.shields.io/circleci/build/github/ksylvest/nsastorage)](https://circleci.com/gh/ksylvest/nsastorage)
 
+A Ruby library offering both a CLI and API for scraping [NSA Storage](https://www.nsastorage.com/) self-storage facilities and prices.
+
 ## Installation
 
 ```bash
@@ -48,4 +50,8 @@ end
 
 ```bash
 nsastorage crawl
+```
+
+```bash
+nsastorage crawl "https://www.nsastorage.com/storage/georgia/storage-units-norcross/1-Western-Hills-Ct-2"
 ```
