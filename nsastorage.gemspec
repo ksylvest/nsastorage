@@ -16,8 +16,9 @@ Gem::Specification.new do |spec|
 
   spec.metadata['rubygems_mfa_required'] = 'true'
   spec.metadata['homepage_uri'] = spec.homepage
-  spec.metadata['source_code_uri'] = spec.homepage
-  spec.metadata['changelog_uri'] = spec.homepage
+  spec.metadata['source_code_uri'] = "https://github.com/ksylvest/nsastorage/tree/v#{NSAStorage::VERSION}"
+  spec.metadata['changelog_uri'] = "https://github.com/ksylvest/nsastorage/releases/tag/v#{NSAStorage::VERSION}"
+  spec.metadata['documentation_uri'] = 'https://nsastorage.ksylvest.com/'
 
   spec.files = Dir.glob('{bin,lib,exe}/**/*') + %w[README.md Gemfile]
   spec.bindir = 'exe'
