@@ -14,7 +14,6 @@ GEM
     addressable (2.8.7)
       public_suffix (>= 2.0.2, < 7.0)
     ast (2.4.3)
-    base64 (0.3.0)
     bigdecimal (3.3.1)
     crack (1.0.1)
       bigdecimal
@@ -121,8 +120,7 @@ GEM
     unicode-display_width (3.1.5)
       unicode-emoji (~> 4.0, >= 4.0.4)
     unicode-emoji (4.0.4)
-    vcr (6.3.1)
-      base64
+    vcr (6.4.0)
     webmock (3.26.1)
       addressable (>= 2.8.0)
       crack (>= 0.3.2)
