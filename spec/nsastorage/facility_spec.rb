@@ -23,6 +23,7 @@ RSpec.describe NSAStorage::Facility do
       expect(fetch).to be_a(described_class)
       expect(fetch.address).to be_a(NSAStorage::Address)
       expect(fetch.geocode).to be_a(NSAStorage::Geocode)
+      expect(fetch.prices).not_to be_empty
       expect(fetch.prices).to all(be_a(NSAStorage::Price))
     end
   end
